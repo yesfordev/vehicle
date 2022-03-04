@@ -1,0 +1,391 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> New Document </title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <link type="text/css" rel="stylesheet" href="css/common.css">
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+        <script type="text/javascript">
+            $(function () {
+                // divBodyScroll의 스크롤이 동작할때에 함수를 불러옵니다.
+                $('.scroll_tbody').scroll(function () {
+                    // divBodyScroll의 x좌표가 움직인 거리를 가져옵니다.
+                    var xPoint = $('.scroll_tbody').scrollLeft();
+
+                    // 가져온 x좌표를 divHeadScroll에 적용시켜 같이 움직일수 있도록 합니다.
+                    $('.scroll_thead').scrollLeft(xPoint);
+                });
+
+                // 처음에 divBodyScroll의 세로스크롤 너비를 알수 없기 때문에
+                // 스크롤을 우측으로 최대한 움직인 후 버튼을 눌러 두 스크롤의 차이를 찾아서 그 크기 만큼 tblHead의 공백 Column의 width를 지정해줍니다.
+                $('#btnCheck').click(function () {
+                    var headMaximum = $('.scroll_thead').scrollLeft();
+                    var bodyMaximum = $('.scroll_tbody').scrollLeft();
+
+                    alert('head: ' + headMaximum + '\nbody: ' + bodyMaximum);
+                });
+            });
+        </script>
+		<script type="text/javascript">
+            $(function () {
+				$('.search').click(function(){
+					$('.searchBox').animate({
+						  right: 0
+						}, 200 );
+						
+				});
+				$('.searchBox .close').click(function(){
+					$('.searchBox').animate({
+						  right: -200
+						}, 200 );
+						
+				});
+			});
+		</script>
+		
+
+</head>
+ <body>
+ <div id="wrap">
+	<div id="header">
+		<div class="h_wrap">
+			<h1><img src="images/title.png" alt="업무용차량 운행일지" /></h1>
+			<div class="login">
+				<!-- 로그인 -->
+				<div class="on">
+					<span>임원사번</span>
+					<div class="textbox"><input type="text" maxlength=""/></div>
+					<span>차량번호(뒤 4자리)</span>
+					<div class="textbox"><input type="text" class="alignC" maxlength="4" /></div>
+					<a href="#">로그인</a><a href="#" class="admin">관리자</a>
+				</div>
+				<!-- 로그아웃 -->
+				<div class="off" style="display:none">
+					<span>홍길동님 접속중 입니다.</span>
+					<a href="#">로그아웃</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- header 끝 -->
+	
+	<div id="contants">
+		<div class="box2">
+			<!-- 기본정보 -->
+			<div class="box_L floatL">
+				<div class="boxTitle">
+					<img src="images/t_icon1.png" alt="기본정보">
+					<span class="title">기본정보</span>
+					<div class="btn">
+						<span class="search">조회</span>
+					</div>
+				</div>
+				<div class="boxCon">
+					<div class="basicTable">
+						<table>
+							<colgroup>
+								<col width="30%" />
+								<col width="70%" />
+							</colgroup>
+							<tbody>
+								<tr>
+									<th>소속</th>
+									<td>HR실</td>
+								</tr>
+								<tr>
+									<th>성명</th>
+									<td>박지성</td>
+								</tr>
+								<tr>
+									<th>차종</th>
+									<td>K7</td>
+								</tr>
+								<tr>
+									<th>차량번호</th>
+									<td>09하1234</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<div class="searchBox">
+					<div class="search_title">
+						<h2>정보조회</h2>
+						<img class="close" src="images/btn_close.png" alt="닫기" />
+					</div>
+					<div class="search_con">
+						<ul>
+							<li>
+								<span>임원 사번</span>
+								<div class="textbox"><input type="text" /></div>
+							</li>
+							<li>
+								<span>차량번호 (뒤 4자리)</span>
+								<div class="textbox"><input type="text" class="alignC" maxlength="4"/></div>
+							</li>
+						</ul>
+						<div class="btnArea">
+							<a href="#" class="btn_save">검색</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<!-- 운행정보 입력 -->
+			<div class="box_L floatR">
+				<div class="boxTitle">
+					<img src="images/t_icon2.png" alt="운행정보 입력">
+					<span class="title">운행정보 입력</span>
+				</div>
+				<div class="boxCon">
+					<div class="basicTable inputTable">
+						<table>
+							<colgroup>
+								<col width="25%" />
+								<col width="25%" />
+								<col width="25%" />
+								<col width="25%" />
+							</colgroup>
+							<tbody>
+								<tr>
+									<th>사용일자</th>
+									<td colspan="3">										
+										<div class="textbox">
+											<input type="text" />
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th>주행 전 계기판(km)</th>
+									<td>										
+										<div class="textbox">
+											<input class="alignR" type="text" />
+										</div>
+									</td>
+									<th>출/퇴근용(km)</th>
+									<td>										
+										<div class="textbox">
+											<input class="alignR" type="text" />
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th>주행 후 계기판(km)</th>
+									<td>										
+										<div class="textbox">
+											<input class="alignR" type="text" />
+										</div>
+									</td>
+									<th>일반 업무용(km)</th>
+									<td>										
+										<div class="textbox">
+											<input class="alignR" type="text" />
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="mt10" style="overflow:hidden">
+						<p>※ 문의 : 경영지원팀 조덕근 M (☎ 6100-5458)</p>
+						<div class="floatR">
+							<a href="#" class="pop_btn" >작성방법</a>
+							<a href="#" class="pop_btn" onclick='window.open("사옥간거리.html", "_blank", "width=570, height=600, toolbar=no, menubar=no, scrollbars=yes, resizable=no, copyhistory=no" );'>사옥간 거리 참고용</a>
+						</div>
+					</div>
+					<div class="btnArea">
+						<a href="#" class="btn_save">저장</a>
+						<a href="#" class="btn_cancle">취소</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- 운행기록 -->
+		<div class="box_L">
+				<div class="boxTitle">
+					<img src="images/t_icon3.png" alt="운행기록">
+					<span class="title">운행기록</span>
+					<div class="floatR space">						
+						<div class="btn">
+							<span class="excel">엑셀 다운로드</span>
+						</div>
+						<p>누적 주행거리 : <span>123</span> km</p>
+					</div>
+				</div>
+				<div class="boxCon">
+					<div class="rowTable">
+					<table id="tblBackground" cellspacing="0">
+					<tr>
+						<td>
+							<div class="scroll_thead">
+								<table id="tblHead">
+									<colgroup>
+										<col width="110px;">
+										<col width="100px;">
+										<col width="120px;">
+										<col width="120px;">
+										<col width="100px;">
+										<col width="100px;">
+										<col width="120px;">
+										<col width="120px;">
+										<col width="120px;">
+										<col width="120px;">
+										<col width="120px;">
+										<col width="">
+									</colgroup>
+									<thead>
+										<tr>
+											<th class="bordernone" rowspan="3"></th>											
+											<th colspan="2">기본정보</th>
+											<th rowspan="3">사용일자(요일)</th>
+											<th colspan="2">사용자</th>
+											<th colspan="6">운행내역</th>											
+											<th width="17px" rowspan="3"></th>
+										</tr>
+										<tr>
+											<th class="bordernone" rowspan="2">차종</th>
+											<th rowspan="2">자동차 등록번호</th>
+											<th rowspan="2">부서</th>
+											<th rowspan="2">성명</th>
+											<th rowspan="2">주행 전 계기판<br />거리(km)</th>
+											<th rowspan="2">주행 후 계기판<br />거리(km)</th>											
+											<th rowspan="2">주행 거리(km)</th>
+											<th colspan="2">업무용 사용거리</th>
+											<th rowspan="2">비고</th>
+										</tr>
+										<tr>
+											<th>출/퇴근용 (km)</th>
+											<th>일반업무용 (km)</th>
+										</tr>
+									</thead>
+								</table>
+							</div>
+							<div class="scroll_tbody">
+								<table id="tblBody">
+									<colgroup>
+										<col width="110px;">
+										<col width="100px;">
+										<col width="120px;">
+										<col width="120px;">
+										<col width="100px;">
+										<col width="100px;">
+										<col width="120px;">
+										<col width="120px;">
+										<col width="120px;">
+										<col width="120px;">
+										<col width="120px;">
+										<col width="">
+									</colgroup>
+									</colgroup>
+									<tbody>
+										<tr>
+											<td><a href="#" class="change">저장</a>
+											<a href="#" class="change">취소</a></td>
+											<td>그랜져</td>
+											<td>2132131231</td>
+											<td><input type="text" class="alignL"></td>
+											<td>부서명</td>
+											<td>홍길동</td>
+											<td class="alignR"><input type="text" class="alignL"></td>
+											<td class="alignR"><input type="text" class="alignL"></td>
+											<td class="alignR">1,000</td>
+											<td class="alignR"><input type="text" class="alignL"></td>
+											<td class="alignR"><input type="text" class="alignL"></td>
+											<td><input type="text" class="alignL"></td>
+										</tr>
+										
+										<tr>
+											<td><a href="#" class="change">수정</a></td>
+											<td>그랜져</td>
+											<td>2132131231</td>
+											<td>16.06.06</td>
+											<td>부서명</td>
+											<td>홍길동</td>
+											<td class="alignR">1,000</td>
+											<td class="alignR">1,000</td>
+											<td class="alignR">1,000</td>
+											<td class="alignR">1,000</td>
+											<td class="alignR">1,000</td>
+											<td>비고란</td>
+										</tr>
+										
+										<tr>
+											<td><a href="#" class="change">수정</a></td>
+											<td>그랜져</td>
+											<td>2132131231</td>
+											<td>16.06.06</td>
+											<td>부서명</td>
+											<td>홍길동</td>
+											<td class="alignR">1,000</td>
+											<td class="alignR">1,000</td>
+											<td class="alignR">1,000</td>
+											<td class="alignR">1,000</td>
+											<td class="alignR">1,000</td>
+											<td>비고란</td>
+										</tr>
+										
+										<tr>
+											<td><a href="#" class="change">수정</a></td>
+											<td>그랜져</td>
+											<td>2132131231</td>
+											<td>16.06.06</td>
+											<td>부서명</td>
+											<td>홍길동</td>
+											<td class="alignR">1,000</td>
+											<td class="alignR">1,000</td>
+											<td class="alignR">1,000</td>
+											<td class="alignR">1,000</td>
+											<td class="alignR">1,000</td>
+											<td>비고란</td>
+										</tr>
+										
+										<tr>
+											<td><a href="#" class="change">수정</a></td>
+											<td>그랜져</td>
+											<td>2132131231</td>
+											<td>16.06.06</td>
+											<td>부서명</td>
+											<td>홍길동</td>
+											<td class="alignR">1,000</td>
+											<td class="alignR">1,000</td>
+											<td class="alignR">1,000</td>
+											<td class="alignR">1,000</td>
+											<td class="alignR">1,000</td>
+											<td>비고란</td>
+										</tr>
+										
+										<tr>
+											<td><a href="#" class="change">수정</a></td>
+											<td>그랜져</td>
+											<td>2132131231</td>
+											<td>16.06.06</td>
+											<td>부서명</td>
+											<td>홍길동</td>
+											<td class="alignR">1,000</td>
+											<td class="alignR">1,000</td>
+											<td class="alignR">1,000</td>
+											<td class="alignR">1,000</td>
+											<td class="alignR">1,000</td>
+											<td>비고란</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</td>
+					</tr>
+					</table>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+	<div>
+	<!-- contants끝 -->
+ </div> 
+ </body>
+</html>
