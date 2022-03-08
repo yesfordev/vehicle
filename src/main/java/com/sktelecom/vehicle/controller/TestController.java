@@ -14,7 +14,6 @@ public class TestController {
 	@Resource(name="testService")
 	private TestService testService;
 	
-	
 	@RequestMapping("/test")
     public ModelAndView sampleView(ModelAndView mv) throws Exception {
         mv.addObject("testAttribute", testService.selectTestData());
