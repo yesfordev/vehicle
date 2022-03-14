@@ -28,6 +28,18 @@
 	
 	<context:component-scan base-package="com.sktelecom.vehicle" /> 
 	
+	<bean id="loginInterceptor" class="com.sktelecom.vehicle.interceptor.LoginInterceptor" />	<!-- 세션체크 -->
 	
+	<mvc:interceptors>		
+		<!-- 세션체크처리 -->
+		<mvc:interceptor>
+			<mvc:mapping path="/**/*" />
+			<mvc:exclude-mapping path="/resources/**" />	<!-- 리소스 파일 제외 -->
+			<mvc:exclude-mapping path="/error/**" />		<!-- 에러페이지 제외 -->
+			<mvc:exclude-mapping path="/Login" /> <!-- 로그인 페이지 -->
+			<mvc:exclude-mapping path="/SSOLogin" /> <!-- 로그인 호출 API -->
+			<ref bean="loginInterceptor" />
+		</mvc:interceptor>
+	</mvc:interceptors>
 	
 </beans>

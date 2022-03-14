@@ -1,4 +1,4 @@
-@charset "utf-8";
+ï»¿@charset "utf-8";
 
 /* reset */
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,textarea,p,blockquote,th,td,input,select,textarea,button {margin:0;padding:0}
@@ -9,7 +9,7 @@ blockquote:before, blockquote:after,q:before, q:after {content:'';content:none}
 input,select,textarea,button {vertical-align:middle}
 button {border:0 none;background-color:transparent;cursor:pointer}
 body {background:#fff}
-body,th,td,input,select,textarea,button {font-size:14px;line-height:1.5; font-family:'Malgun Gothic',  'Apple Gothic', arial, dotum, gulim; color:#333} /* color°ªÀº µğÀÚÀÎ°¡ÀÌµå¿¡ ¸Â°Ô»ç¿ë */
+body,th,td,input,select,textarea,button {font-size:14px;line-height:1.5; font-family:'Malgun Gothic',  'Apple Gothic', arial, dotum, gulim; color:#333} /* colorê°’ì€ ë””ìì¸ê°€ì´ë“œì— ë§ê²Œì‚¬ìš© */
 a {color:#333;text-decoration:none}
 a:active, a:hover {text-decoration:none}
 address,caption,cite,code,dfn,em,var {font-style:normal;font-weight:normal}
@@ -44,8 +44,8 @@ body{background:#f2f2f2;}
 #contants .box_L{background:#fff; border:1px solid #e0e0e0; padding:20px; margin-top:20px; position:relative; overflow:hidden;}
 #contants .box2 {overflow:hidden;}
 #contants .box2 .box_L{width:650px; height:320px; display:inline-block;}
-#contants .box2 .box_L.w900{width:850px; height:600px; display:inline-block;}
-#contants .box2 .box_L.w450{width:450px;}
+#contants .box2 .box_L.w900{width:900px; height:600px; display:inline-block;}
+#contants .box2 .box_L.w450{width:400px;}
 #contants .box2 .box_L .btn{margin:0;}
 .boxTitle{ height:35px;}
 .boxTitle img{float:left;}
@@ -66,7 +66,7 @@ body{background:#f2f2f2;}
 
 .boxCon p{float:left; line-height:30px;}
 .boxCon .pop_btn{float:left; margin-left:10px; font-size:12px; background:#717171; color:#fff; border-radius:3px; padding:5px 10px;}
-/*Á¤º¸Á¶È¸*/
+/*ì •ë³´ì¡°íšŒ*/
 .searchBox{position:absolute; top:0; right:-200px; width:200px; background:#545454; height:320px; padding:20px 0;}
 .searchBox .search_title{overflow:hidden; height:35px; line-height:1; padding:0 20px 15px; border-bottom:1px solid #fff;}
 .searchBox .search_title h2{color:#fff; float:left;}
@@ -77,7 +77,7 @@ body{background:#f2f2f2;}
 .searchBox .search_con ul li .textbox{border:1px solid #e0e0e0; background:#fff; width:140px; padding:0 10px; height:35px; float:left; margin-top: 5px;}
 .searchBox .search_con ul li .textbox input{border:0; width:100%; margin:5px 0 5px; display:block; font-size:16px; font-weight:bold;}
 .searchBox .search_con .btnArea a{background:#ef8009; color:#fff; font-size:20px; font-weight:bold; width:160px; height:60px; line-height:60px; display:inline-block; border-radius:3px; text-align:center; margin-top:30px;}
-/*¿îÇàÁ¤º¸*/
+/*ìš´í–‰ì •ë³´*/
 .space{margin-top:10px;}
 .space .btn{float:left; margin-right:10px;}
 .space .btn .excel{background:url('../images/excel_icon.gif') no-repeat 10px 5px; padding:5px 10px 5px 30px; border-radius:3px; font-size:12px; border:1px solid #bbb; cursor:pointer;}
@@ -99,5 +99,6 @@ body{background:#f2f2f2;}
 
 a.change{background:#ef8009; color:#fff; padding:4px 7px; border-radius:3px; font-size:12px; font-weight:bold;}
 a.del{background:#999; color:#fff; padding:4px 7px; border-radius:3px; font-size:12px; font-weight:bold;}
-/* 0415Ãß°¡-¿îÇà±â¿Á input ¹Ú½º ÄÃ·¯½ºÅ¸ÀÏ */
-.rowTable table tbody td input{width:100%; padding:1px 0; display:block; border: 1px solid #51b4f3;}
+a.cancel{background:#6194fc; color:#fff; padding:4px 7px; border-radius:3px; font-size:12px; font-weight:bold;}
+/* 0415ì¶”ê°€-ìš´í–‰ê¸°ì˜¥ input ë°•ìŠ¤ ì»¬ëŸ¬ìŠ¤íƒ€ì¼ */
+.rowTable table tbody td input,select{width:100%; padding:1px 0; display:block; border: 1px solid #51b4f3;}
