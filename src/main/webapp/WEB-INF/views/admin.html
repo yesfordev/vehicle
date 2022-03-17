@@ -1,0 +1,323 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> New Document </title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <link type="text/css" rel="stylesheet" href="css/common.css">
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+        <script type="text/javascript">
+            $(function () {
+                // divBodyScroll의 스크롤이 동작할때에 함수를 불러옵니다.
+                $('.scroll_tbody').scroll(function () {
+                    // divBodyScroll의 x좌표가 움직인 거리를 가져옵니다.
+                    var xPoint = $('.scroll_tbody').scrollLeft();
+
+                    // 가져온 x좌표를 divHeadScroll에 적용시켜 같이 움직일수 있도록 합니다.
+                    $('.scroll_thead').scrollLeft(xPoint);
+                });
+
+                // 처음에 divBodyScroll의 세로스크롤 너비를 알수 없기 때문에
+                // 스크롤을 우측으로 최대한 움직인 후 버튼을 눌러 두 스크롤의 차이를 찾아서 그 크기 만큼 tblHead의 공백 Column의 width를 지정해줍니다.
+                $('#btnCheck').click(function () {
+                    var headMaximum = $('.scroll_thead').scrollLeft();
+                    var bodyMaximum = $('.scroll_tbody').scrollLeft();
+
+                    alert('head: ' + headMaximum + '\nbody: ' + bodyMaximum);
+                });
+            });
+        </script>
+		<script type="text/javascript">
+            $(function () {
+				$('.search').click(function(){
+					$('.searchBox').animate({
+						  right: 0
+						}, 200 );
+						
+				});
+				$('.searchBox .close').click(function(){
+					$('.searchBox').animate({
+						  right: -200
+						}, 200 );
+						
+				});
+			});
+		</script>
+		
+
+</head>
+ <body>
+ <div id="wrap">
+	<div id="header">
+		<div class="h_wrap">
+			<h1><img src="images/admin_title.png" alt="업무용차량 운행일지 관리자" /></h1>
+		</div>
+	</div>
+	<!-- header 끝 -->
+	
+	<div id="contants">
+		<div class="box2">
+			<!-- 차량정보 -->
+			<div class="box_L floatL w900">
+				<div class="boxTitle">
+					<img src="images/t_icon1.png" alt="기본정보">
+					<span class="title">차량정보</span>
+					<div class="floatR space">						
+						<div class="btn">
+							<span class="excel">엑셀 다운로드</span>
+						</div>
+					</div>
+				</div>
+				<div class="boxCon">
+					<div class="rowTable">
+					<table id="tblBackground" cellspacing="0">
+					<tr>
+						<td>
+							<div class="scroll_thead">
+								<table id="tblHead">
+									<colgroup>
+										<col width="120px" />
+										<col width="120px" />
+										<col width="120px" />
+										<col width="233px" />
+										<col width="120px" />
+										<col width="120px" />
+									</colgroup>
+									<thead>
+										<tr>
+											<th>편집</th>
+											<th>사번</th>				
+											<th>이름</th>				
+											<th>부서</th>				
+											<th>차종</th>				
+											<th>차량번호</th>
+											<th width="17px"></th>
+										</tr>
+									</thead>
+								</table>
+							</div>
+							<div class="scroll_tbody">
+								<table id="tblBody">
+									<colgroup>
+										<col width="120px" />
+										<col width="120px" />
+										<col width="120px" />
+										<col width="233px" />
+										<col width="120px" />
+										<col width="120px" />
+									</colgroup>
+									</colgroup>
+									<tbody>
+										<tr>
+											<td><a href="#" class="change">수정</a>
+											<a href="#" class="del">삭제</a></td>
+											<td>123456</td>
+											<td>홍길동</td>
+											<td>AA팀</td>
+											<td>그랜져</td>
+											<td>12가3456</td>
+										</tr>
+										<tr>
+											<td><a href="#" class="change">수정</a>
+											<a href="#" class="del">삭제</a></td>
+											<td>123456</td>
+											<td>홍길동</td>
+											<td>AA팀</td>
+											<td>그랜져</td>
+											<td>12가3456</td>
+										</tr>
+										<tr>
+											<td><a href="#" class="change">수정</a>
+											<a href="#" class="del">삭제</a></td>
+											<td>123456</td>
+											<td>홍길동</td>
+											<td>AA팀</td>
+											<td>그랜져</td>
+											<td>12가3456</td>
+										</tr>
+										<tr>
+											<td><a href="#" class="change">수정</a>
+											<a href="#" class="del">삭제</a></td>
+											<td>123456</td>
+											<td>홍길동</td>
+											<td>AA팀</td>
+											<td>그랜져</td>
+											<td>12가3456</td>
+										</tr>
+										<tr>
+											<td><a href="#" class="change">수정</a>
+											<a href="#" class="del">삭제</a></td>
+											<td>123456</td>
+											<td>홍길동</td>
+											<td>AA팀</td>
+											<td>그랜져</td>
+											<td>12가3456</td>
+										</tr>
+										<tr>
+											<td><a href="#" class="change">수정</a>
+											<a href="#" class="del">삭제</a></td>
+											<td>123456</td>
+											<td>홍길동</td>
+											<td>AA팀</td>
+											<td>그랜져</td>
+											<td>12가3456</td>
+										</tr>
+										<tr>
+											<td><a href="#" class="change">수정</a>
+											<a href="#" class="del">삭제</a></td>
+											<td>123456</td>
+											<td>홍길동</td>
+											<td>AA팀</td>
+											<td>그랜져</td>
+											<td>12가3456</td>
+										</tr>
+										<tr>
+											<td><a href="#" class="change">수정</a>
+											<a href="#" class="del">삭제</a></td>
+											<td>123456</td>
+											<td>홍길동</td>
+											<td>AA팀</td>
+											<td>그랜져</td>
+											<td>12가3456</td>
+										</tr>
+										<tr>
+											<td><a href="#" class="change">수정</a>
+											<a href="#" class="del">삭제</a></td>
+											<td>123456</td>
+											<td>홍길동</td>
+											<td>AA팀</td>
+											<td>그랜져</td>
+											<td>12가3456</td>
+										</tr>
+										<tr>
+											<td><a href="#" class="change">수정</a>
+											<a href="#" class="del">삭제</a></td>
+											<td>123456</td>
+											<td>홍길동</td>
+											<td>AA팀</td>
+											<td>그랜져</td>
+											<td>12가3456</td>
+										</tr>
+										<tr>
+											<td><a href="#" class="change">수정</a>
+											<a href="#" class="del">삭제</a></td>
+											<td>123456</td>
+											<td>홍길동</td>
+											<td>AA팀</td>
+											<td>그랜져</td>
+											<td>12가3456</td>
+										</tr>
+										<tr>
+											<td><a href="#" class="change">수정</a>
+											<a href="#" class="del">삭제</a></td>
+											<td>123456</td>
+											<td>홍길동</td>
+											<td>AA팀</td>
+											<td>그랜져</td>
+											<td>12가3456</td>
+										</tr>
+										<tr>
+											<td><a href="#" class="change">수정</a>
+											<a href="#" class="del">삭제</a></td>
+											<td>123456</td>
+											<td>홍길동</td>
+											<td>AA팀</td>
+											<td>그랜져</td>
+											<td>12가3456</td>
+										</tr>
+										<tr>
+											<td><a href="#" class="change">수정</a>
+											<a href="#" class="del">삭제</a></td>
+											<td>123456</td>
+											<td>홍길동</td>
+											<td>AA팀</td>
+											<td>그랜져</td>
+											<td>12가3456</td>
+										</tr>
+										<tr>
+											<td><a href="#" class="change">수정</a>
+											<a href="#" class="del">삭제</a></td>
+											<td>123456</td>
+											<td>홍길동</td>
+											<td>AA팀</td>
+											<td>그랜져</td>
+											<td>12가3456</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</td>
+					</tr>
+					</table>
+					</div>
+				</div>
+			</div>
+			
+			<!-- 차량정보 입력 -->
+			<div class="box_L floatR w450">
+				<div class="boxTitle">
+					<img src="images/t_icon2.png" alt="운행정보 입력">
+					<span class="title">차량정보 입력</span>
+				</div>
+				<div class="boxCon">
+					<div class="basicTable inputTable">
+						<table>
+							<colgroup>
+								<col width="25%" />
+								<col width="25%" />
+								<col width="25%" />
+								<col width="25%" />
+							</colgroup>
+							<tbody>
+								<tr>
+									<th>소속</th>
+									<td colspan="3">										
+										<div class="textbox">
+											<input type="text" />
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th>사번</th>
+									<td>										
+										<div class="textbox">
+											<input type="text" />
+										</div>
+									</td>
+									<th>성명</th>
+									<td>										
+										<div class="textbox">
+											<input type="text" />
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th>차종</th>
+									<td>										
+										<div class="textbox">
+											<input type="text" />
+										</div>
+									</td>
+									<th>차량번호</th>
+									<td>										
+										<div class="textbox">
+											<input type="text" />
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="btnArea">
+						<a href="#" class="btn_save">저장</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	<div>
+	<!-- contants끝 -->
+ </div> 
+ </body>
+</html>

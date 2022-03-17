@@ -29,7 +29,7 @@
 							success: function(res) {
 								if (res.result === 'Y') {
 									jAlert('로그인 되었습니다!', '알림창');
-									//location.href ='';		
+									location.href ='';		
 								} else {
 									jAlert('일치하는 사용자 정보가 없습니다.<br/>임원사번 또는 차량번호를 확인하세요!', '알림창');
 				                    $('#txtEmpid').val("");
@@ -60,10 +60,30 @@
 					return true;
 			}
 		}
+	};
+	
+	var Logout = {
+		btnLogoutClickEvent : function() {
+			$('#btnLogout').on('click', function() {
+				$.ajax({
+					url: ROOT + '/Logout',
+					contentType : 'application/json;charset=utf-8',
+					type:'GET',
+					success: function(res) {
+						location.href='';
+					},
+					error: function(err) {
+                        jAlert('일시적으로 접속 오류가 발생했습니다.<br/>잠시 후에 다시 접속 하시거나 02-6400-2945으로 연락바랍니다.', '알림창');
+						
+					}
+				});
+			})
+		}
 	}
 
 	$(document).ready(function() {
 		Login.init();
+		Logout.btnLogoutClickEvent();
 	});
 </script>
 </head>
@@ -76,17 +96,32 @@
 				</h1>
 				<div class="login">
 					<!-- 로그인 -->
-					<div class="on">
-						<span>임원사번</span>
-						<div class="textbox">
-							<input type="text" id="txtEmpid" class="alignC" name="txtEmpid" maxlength="8" />
-						</div>
-						<span>차량번호(뒤 4자리)</span>
-						<div class="textbox">
-							<input type="text" id="txtCar4number" name="txtCar4number" class="alignC" maxlength="4" />
-						</div>
-						<a id="btnLogin" href="javascript:void(0);">로그인</a>
-					</div>
+					<c:choose>
+						<c:when test="${empty LoginVo}">
+							<div class="on">
+								<span>임원사번</span>
+								<div class="textbox">
+									<input type="text" id="txtEmpid" class="alignC" name="txtEmpid" maxlength="8" />
+								</div>
+								<span>차량번호(뒤 4자리)</span>
+								<div class="textbox">
+									<input type="text" id="txtCar4number" name="txtCar4number" class="alignC" maxlength="4" />
+								</div>
+								<a id="btnLogin" href="javascript:void(0);">로그인</a>
+							</div>
+						</c:when>
+						
+						<c:otherwise>
+							<!-- 로그아웃 -->
+							<div class="off">
+								<span>${LoginVo.username}님 접속중 입니다.</span>
+								<a id="btnLogout" href="javascript:void(0);">로그아웃</a>
+								<c:if test="${LoginVo.empid eq 'ADMIN'}">
+									<a href="#" class="admin">관리자</a>
+								</c:if>
+							</div>
+						</c:otherwise>
+					</c:choose>
 				</div>
 			</div>
 		</div>

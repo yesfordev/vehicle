@@ -1,0 +1,104 @@
+﻿@charset "utf-8";
+
+/* reset */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,textarea,p,blockquote,th,td,input,select,textarea,button {margin:0;padding:0}
+fieldset,img {border:0 none}
+dl,ul,ol,menu,li {list-style:none}
+blockquote, q {quotes: none}
+blockquote:before, blockquote:after,q:before, q:after {content:'';content:none}
+input,select,textarea,button {vertical-align:middle}
+button {border:0 none;background-color:transparent;cursor:pointer}
+body {background:#fff}
+body,th,td,input,select,textarea,button {font-size:14px;line-height:1.5; font-family:'Malgun Gothic',  'Apple Gothic', arial, dotum, gulim; color:#333} /* color값은 디자인가이드에 맞게사용 */
+a {color:#333;text-decoration:none}
+a:active, a:hover {text-decoration:none}
+address,caption,cite,code,dfn,em,var {font-style:normal;font-weight:normal}
+
+table{border-spacing:0;border-collapse:collapse; width:100%; background:#fff;}
+colgroup{background:none;}
+
+.floatL{float:left;}
+.floatR{float:right;}
+.alignR{text-align:right !important;}
+.alignL{text-align:left !important;}
+.alignC{text-align:center !important;}
+.mt10{margin-top:10px;}
+
+body{background:#f2f2f2;}
+#header{height:80px; background:#333;}
+#header .h_wrap{width:1400px; margin:0 auto; overflow:hidden;}
+#header h1{overflow:hidden; margin:20px 0 0 20px; float:left;}
+
+#header .login{float:right; margin-right:20px; margin-top:23px;}
+#header .login .on span{color:#fff; float:left; line-height:35px; margin:0 10px 0 20px;}
+#header .login .on .textbox{background:#777; width:100px; padding:0 10px; height:35px; float:left;}
+#header .login .on .textbox input{background:#777; border:0; color:#fff; width:100%; margin:5px 0 5px; display:block;}
+#header .login .on a{display:inline-block; color:#fff; background:#ef8009; width:80px; height:35px; text-align:center; line-height:35px; font-weight:bold;margin-left:10px; border-radius:3px;}
+#header .login .on a.admin{background:#999;}
+
+#header .login .off span{color:#fff; float:left; line-height:35px;}
+#header .login .off a{display:inline-block; color:#fff; background:#a8a8a8; width:80px; height:35px; text-align:center; line-height:35px; font-weight:bold;margin-left:10px;}
+
+
+#contants{width:1400px; margin:0 auto;}
+#contants .box_L{background:#fff; border:1px solid #e0e0e0; padding:20px; margin-top:20px; position:relative; overflow:hidden;}
+#contants .box2 {overflow:hidden;}
+#contants .box2 .box_L{width:650px; height:320px; display:inline-block;}
+#contants .box2 .box_L.w900{width:900px; height:600px; display:inline-block;}
+#contants .box2 .box_L.w450{width:400px;}
+#contants .box2 .box_L .btn{margin:0;}
+.boxTitle{ height:35px;}
+.boxTitle img{float:left;}
+.boxTitle .title{font-size:20px; font-weight:bold; line-height:30px; margin-left:10px;}
+.boxTitle .btn{float:right;}
+.boxTitle .btn .search{background:url('../images/btn_search.png') no-repeat #717171 20px 10px; color:#fff; font-size:14px; line-height:30px; font-weight:bold; padding:0 20px 0 40px; height:35px; display:inline-block; border-radius:3px; cursor:pointer;}
+.boxCon{ margin-top:15px;}
+.boxCon .basicTable table{border-top:2px solid #e0e0e0;}
+.boxCon .basicTable table th{ background:#f2f2f2; text-align:left; padding-left:20px; height:40px; border-bottom:1px solid #e0e0e0;}
+.boxCon .basicTable table td{font-size:16px; text-align:left; padding-left:20px; height:40px; border-bottom:1px solid #e0e0e0;}
+.boxCon .basicTable.inputTable table td{padding-left:0;}
+.boxCon .basicTable table td .textbox{padding:0 5px;}
+.boxCon .basicTable table td .textbox input{border:1px solid #e0e0e0; width:100%; padding:3px 0; display:block;}
+.boxCon .btnArea{text-align:center;}
+.boxCon .btnArea a{color:#fff; font-size:20px; font-weight:bold; width:170px; height:60px; line-height:60px; display:inline-block; border-radius:3px; text-align:center; margin:0 10px; margin-top:30px;}
+.boxCon .btnArea a.btn_save{background:#ef8009;}
+.boxCon .btnArea a.btn_cancle{background:#a8a8a8;}
+
+.boxCon p{float:left; line-height:30px;}
+.boxCon .pop_btn{float:left; margin-left:10px; font-size:12px; background:#717171; color:#fff; border-radius:3px; padding:5px 10px;}
+/*정보조회*/
+.searchBox{position:absolute; top:0; right:-200px; width:200px; background:#545454; height:320px; padding:20px 0;}
+.searchBox .search_title{overflow:hidden; height:35px; line-height:1; padding:0 20px 15px; border-bottom:1px solid #fff;}
+.searchBox .search_title h2{color:#fff; float:left;}
+.searchBox .search_title .close{float:right; cursor:pointer;}
+.searchBox .search_con{padding:20px;}
+.searchBox .search_con ul li span{font-size:16px; font-weight:bold; color:#fff;}
+.searchBox .search_con ul li{margin-bottom:10px; overflow:hidden;}
+.searchBox .search_con ul li .textbox{border:1px solid #e0e0e0; background:#fff; width:140px; padding:0 10px; height:35px; float:left; margin-top: 5px;}
+.searchBox .search_con ul li .textbox input{border:0; width:100%; margin:5px 0 5px; display:block; font-size:16px; font-weight:bold;}
+.searchBox .search_con .btnArea a{background:#ef8009; color:#fff; font-size:20px; font-weight:bold; width:160px; height:60px; line-height:60px; display:inline-block; border-radius:3px; text-align:center; margin-top:30px;}
+/*운행정보*/
+.space{margin-top:10px;}
+.space .btn{float:left; margin-right:10px;}
+.space .btn .excel{background:url('../images/excel_icon.gif') no-repeat 10px 5px; padding:5px 10px 5px 30px; border-radius:3px; font-size:12px; border:1px solid #bbb; cursor:pointer;}
+.space span{font-weight:bold;}
+#tblBackground {width: 100%; table-layout: fixed;}
+.rowTable .scroll_thead{overflow: hidden; position: relative; width:100%;}
+.rowTable .scroll_thead table{border-top:2px solid #e0e0e0; table-layout: fixed;}
+.rowTable .scroll_thead th{background:#f2f2f2; height:30px; border-bottom:1px solid #e0e0e0; border-left:1px solid #e0e0e0;}
+.rowTable table thead tr th.bordernone{border-left:0;}
+
+
+.rowTable .scroll_tbody{overflow: hidden; position: relative; width:100%; overflow-x:hidden; overflow-y: scroll; height:222px;}
+#contants .box2 .box_L.w900 .rowTable .scroll_tbody{height:492px;}
+.rowTable .scroll_tbody table{table-layout:fixed;}
+.rowTable .scroll_tbody tbody td{height:40px; border-bottom:1px solid #e0e0e0; border-left:1px solid #e0e0e0; text-align:center; padding:0 10px;}
+.rowTable .scroll_tbody tbody td:first-child{border-left:0;}
+
+.rowTable .scroll_tbody table tbody tr{cursor:pointer;}
+
+a.change{background:#ef8009; color:#fff; padding:4px 7px; border-radius:3px; font-size:12px; font-weight:bold;}
+a.del{background:#999; color:#fff; padding:4px 7px; border-radius:3px; font-size:12px; font-weight:bold;}
+a.cancel{background:#6194fc; color:#fff; padding:4px 7px; border-radius:3px; font-size:12px; font-weight:bold;}
+/* 0415추가-운행기옥 input 박스 컬러스타일 */
+.rowTable table tbody td input,select{width:100%; padding:1px 0; display:block; border: 1px solid #51b4f3;}
